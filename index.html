@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood Generator</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 50px;
+      transition: background-color 0.5s ease;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    #mood {
+      font-size: 2em;
+      margin: 30px 0;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      background-color: #e91e63;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎭 Mood Generator 🎭</h1>
+  <div id="mood">Click the button to feel a new vibe!</div>
+  <button onclick="generateMood()">Change My Mood</button>
+
+  <script>
+    const moods = [
+      { text: "🌞 Sunny Vibes!", color: "#ffe066" },
+      { text: "🌧️ Rainy Feels", color: "#90caf9" },
+      { text: "🎉 Party Mode!", color: "#f48fb1" },
+      { text: "💤 Sleepy Zone...", color: "#b39ddb" },
+      { text: "💡 Creative Spark!", color: "#ffd54f" },
+      { text: "😎 Cool & Chill", color: "#80cbc4" },
+      { text: "🚀 Let's Go!", color: "#a5d6a7" }
+    ];
+
+    function generateMood() {
+      const mood = moods[Math.floor(Math.random() * moods.length)];
+      document.getElementById("mood").innerText = mood.text;
+      document.body.style.backgroundColor = mood.color;
+    }
+  </script>
+
+</body>
+</html>
